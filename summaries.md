@@ -20,15 +20,7 @@ giving the syllabus and the "big picture" of what 18.06 is about.
 
 Then I started right in on [Gaussian
 elimination](https://en.wikipedia.org/wiki/Gaussian_elimination).  I
-started with the "high school" method of writing out three equations
-in three unknowns, adding/subtracting multiples of equations until we
-were left with one equation in one unknown — at that point we can
-solve it, then work backwards ("backsubstitution") through the
-remaining equations until we know all the unknowns.  Then, I wrote the
-same equations in matrix form, and renamed this process "Gaussian
-elimination": we add/subtract multiples of matrix rows to introduce
-zeros below the diagonal, i.e. to make the matrix [upper
-triangular](https://en.wikipedia.org/wiki/Triangular_matrix).   We want to do the same operations to the right-hand side, so we [augment](https://en.wikipedia.org/wiki/Augmented_matrix) the matrix with the right-hand side before starting Gaussian eliminations.
+started with the "high school" method of writing out three equations in three unknowns, adding/subtracting multiples of equations until we were left with one equation in one unknown — at that point we can solve it, then work backwards ("backsubstitution") through the remaining equations until we know all the unknowns.  Then, I wrote the same equations in matrix form, and renamed this process "Gaussian elimination": we add/subtract multiples of matrix rows to introduce zeros below the diagonal, i.e. to make the matrix [upper triangular](https://en.wikipedia.org/wiki/Triangular_matrix).   We want to do the same operations to the right-hand side, so we [augment](https://en.wikipedia.org/wiki/Augmented_matrix) the matrix with the right-hand side before starting Gaussian eliminations.
 
 This process is quite tedious to do by hand, so I instead switched over to [Julia](http://julialang.org/) to do more computational exploration with [this Julia notebook](http://nbviewer.jupyter.org/github/stevengj/1806/blob/fall17/lectures/Gaussian-elimination.ipynb).  See [here for more information on using Julia](https://github.com/stevengj/julia-mit); you can also go to [juliabox.com](https://juliabox.com/) to use it online without installing anything.  To use the interactive widgets in the notebook from today, you will have to run it in Julia yourself:
 
