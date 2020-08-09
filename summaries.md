@@ -1,11 +1,6 @@
 # Fall 2017 Lecture Summaries
 
-This document is a *brief* summary of what was covered in each 18.06
-lecture, along with links and suggestions for further reading.  It is
-*not* a good substitute for attending lecture, but may provide a
-useful study guide.
 
-I'll try to update it within a day of each lecture.
 
 ## Lecture 1 (Sep 6)
 
@@ -19,8 +14,7 @@ slides](https://github.com/stevengj/1806/blob/fall17/lectures/overview.pdf)
 giving the syllabus and the "big picture" of what 18.06 is about.
 
 Then I started right in on [Gaussian
-elimination](https://en.wikipedia.org/wiki/Gaussian_elimination).  I
-started with the "high school" method of writing out three equations in three unknowns, adding/subtracting multiples of equations until we were left with one equation in one unknown — at that point we can solve it, then work backwards ("backsubstitution") through the remaining equations until we know all the unknowns.  Then, I wrote the same equations in matrix form, and renamed this process "Gaussian elimination": we add/subtract multiples of matrix rows to introduce zeros below the diagonal, i.e. to make the matrix [upper triangular](https://en.wikipedia.org/wiki/Triangular_matrix).   We want to do the same operations to the right-hand side, so we [augment](https://en.wikipedia.org/wiki/Augmented_matrix) the matrix with the right-hand side before starting Gaussian eliminations.
+elimination](https://en.wikipedia.org/wiki/Gaussian_elimination).  I started with the "high school" method of writing out three equations in three unknowns, adding/subtracting multiples of equations until we were left with one equation in one unknown — at that point we can solve it, then work backwards ("backsubstitution") through the remaining equations until we know all the unknowns.  Then, I wrote the same equations in matrix form, and renamed this process "Gaussian elimination": we add/subtract multiples of matrix rows to introduce zeros below the diagonal, i.e. to make the matrix [upper triangular](https://en.wikipedia.org/wiki/Triangular_matrix).   We want to do the same operations to the right-hand side, so we [augment](https://en.wikipedia.org/wiki/Augmented_matrix) the matrix with the right-hand side before starting Gaussian eliminations.
 
 This process is quite tedious to do by hand, so I instead switched over to [Julia](http://julialang.org/) to do more computational exploration with [this Julia notebook](http://nbviewer.jupyter.org/github/stevengj/1806/blob/fall17/lectures/Gaussian-elimination.ipynb).  See [here for more information on using Julia](https://github.com/stevengj/julia-mit); you can also go to [juliabox.com](https://juliabox.com/) to use it online without installing anything.  To use the interactive widgets in the notebook from today, you will have to run it in Julia yourself:
 
@@ -73,23 +67,7 @@ In the next lecture (which will start with the end of this notebook), we will lo
 
 **Further reading:** Textbook sections 2.5, 2.6.  Strang [lecture 4 video](https://www.youtube.com/watch?v=5hO3MrzPa0A) and [lecture 3 video](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-3-multiplication-and-inverse-matrices/).
 
-## Optional Julia Tutorial (Monday Sep 11, 5pm, 32-155)
 
-On **Monday** at 5pm, there will be an optional tutorial session in 32-155
-for the [Julia](http://julialang.org/) computer software that we will be using in 18.06 this
-semester for homework and lecture demonstrations. Julia is a
-programming language, but no "real" programming will be required in 18.06: we
-will just be using it as a "fancy calculator" that happens to have
-lots of linear algebra and other capabilities. The tutorial session is
-optional; for the homework, we will mostly just give you code and tell
-you to run it, perhaps with minor tweaks, in order to perform
-computational experiments.  Bring your laptops, and try logging into
-[juliabox.com](https://juliabox.com) beforehand.  More information:
-
-* [Instructions/links for using Julia](https://github.com/stevengj/julia-mit/)
-* [Overview slides](https://github.com/stevengj/1806/blob/fall17/julia/Julia-intro.pdf)
-* [Julia cheatsheet](https://github.com/stevengj/1806/blob/fall17/julia/Julia-cheatsheet.pdf)
-* [Tutorial notebook](http://nbviewer.jupyter.org/github/stevengj/1806/blob/fall17/julia/tutorial.ipynb)
 
 ## Lecture 4 (Sep 13)
 
@@ -154,22 +132,12 @@ Generalizations of vector spaces and subspaces.  These aren't limited to the n-c
 
 More on nullspace and column space.  Reviewed the definitions, and the fact that Ax=b is solvable if and only if ("iff") b ∈ C(A).  Given a particular solution xₚ satisfying Axₚ=b, xₚ+x is *also* a solution for any x ∈ N(A).
 
-Showed that N(A) ⊆ N(BA) for any matrix B, and that the two are equal
-if B is invertible.  However, C(A) and C(BA) are in general quite
-distinct (neither is contained in the other), although they have the
-same dimension if B is invertible.  In consequence, elimination steps
-(or any other row operations), which correspond to multiplying by
-invertible matrices on the left, don't change the nullspace.
+Showed that N(A) ⊆ N(BA) for any matrix B, and that the two are equal if B is invertible.  However, C(A) and C(BA) are in general quite distinct (neither is contained in the other), although they have the same dimension if B is invertible.  In consequence, elimination steps (or any other row operations), which correspond to multiplying by invertible matrices on the left, don't change the nullspace.
 
-Defined a **basis** for a vector space as a *minimal* set of vectors (we
-will later say that they have to be *linearly independent*) whose
-**span** (all linear combinations) produces everything in the space.
-The **dimension** of a vector space is the number of vectors in a
-basis.
+Defined a **basis** for a vector space as a *minimal* set of vectors (we will later say that they have to be *linearly independent*) whose **span** (all linear combinations) produces everything in the space.
+The **dimension** of a vector space is the number of vectors in a basis.
 
-Went through a couple of examples of applying elimination to singular
-and nonsquare matrices.  Defined the **rank** as the number of (nonzero)
-pivots, the pivot columns, and the
+Went through a couple of examples of applying elimination to singular and nonsquare matrices.  Defined the **rank** as the number of (nonzero) pivots, the pivot columns, and the
 free columns.  Showed that the null space is preserved by elimination, so that N(A)=N(U), and how we can solve for the null space by solving Ux=0: for each free column, we find a "special solution" (a linear combination of the pivot columns that cancels that free column), and this gives us a *basis* for the null space N(A).
 
 * Understanding how the various fundamental subspaces like N(A) and C(A) are *affected by matrix operations*, e.g. elimination or factorization.
